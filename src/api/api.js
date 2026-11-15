@@ -1,5 +1,5 @@
 // src/api/api.js
-const BASE_URL = 'http://localhost:8000/api';
+const BASE_URL = 'https://menze-store-backend-1.onrender.com';
 
 function getHeaders(auth = false) {
   const headers = { 'Content-Type': 'application/json' };
