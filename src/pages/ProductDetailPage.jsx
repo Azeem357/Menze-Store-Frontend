@@ -34,6 +34,7 @@ export default function ProductDetailPage() {
     addToCart(product, qty);
     setAdded(true);
     setTimeout(() => setAdded(false), 1500);
+    window.MenzeTracker?.trackAddToCart(product.id, product.name, product.price);
   }
 
   if (loading) return (
