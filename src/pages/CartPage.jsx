@@ -13,6 +13,7 @@ export default function CartPage() {
 
   function handleCheckout() {
     if (!user) return navigate('/login?next=/checkout');
+    window.MenzeTracker?.trackCheckout(null, totalPrice);
     navigate('/checkout');
   }
 
