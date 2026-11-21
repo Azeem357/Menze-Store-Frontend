@@ -32,6 +32,7 @@ export default function CheckoutPage() {
     try {
       const payload = { items: items.map(({ product, quantity }) => ({ product_id: product.id, quantity })) };
       const order = await orderAPI.create(payload);
+      window.MenzeTracker?.trackPurchase(order.id, grandTotal, items.map(i => ({ id: i.product.id, name: i.product.name, qty: i.quantity })));
       clearCart();
       navigate(`/orders/${order.id}`, { state: { success: true } });
     } catch (err) {
